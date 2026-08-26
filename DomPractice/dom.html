@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+
+    <style>
+      .active {
+        color: green;
+        font-weight: bold;
+      }
+
+      .box {
+        padding: 20px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">DOM Practice</h1>
+
+    <div id="box" class="box">
+      <h2>My Todo List</h2>
+
+      <form id="todoForm">
+        <input id="todoInput" type="text" placeholder="Enter todo" />
+
+        <button id="addBtn" type="button">Add Todo</button>
+      </form>
+
+      <ul id="todoList">
+        <li class="todo1">Learn JavaScript</li>
+        <li class="todo">Learn React</li>
+        <li class="todo">Practice DOM</li>
+      </ul>
+    </div>
+
+    <button id="changeBtn">Change Title</button>
+    <button id="focusBtn">Focus Input</button>
+    <button id="toggleBtn">Toggle Active</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
