@@ -34,12 +34,40 @@
 //   },
 // };
 
-// function deepMerge(obj1, obj2) {
-//   let deepMergeObj = {};
+const obj3 = {
+  age: 24,
+  address: {
+    city: "Delhi",
+  },
+};
 
-//   let length = Math.max(obj1.length, obj2.length);
+const obj4 = {
+  name: "bantony",
+  address: {
+    pincode: 1234,
+  },
+};
 
-//   for (let i = 0; i < length - 1; i++) {
+function deepMerge(obj1, obj2) {
+  let result = {};
+  for (let keys in obj1) {
+    result[keys] = obj1[keys];
+  }
 
-//   }
-// }
+  for (let keys in obj2) {
+    if (
+      typeof result[keys] === typeof {} &&
+      result[keys] !== null &&
+      typeof obj2[keys] === typeof {} &&
+      obj2[keys] !== null
+    ) {
+      result[keys] = deepMerge(result[keys], obj2[keys]);
+    } else {
+      result[keys] = obj2[keys];
+    }
+  }
+
+  return result;
+}
+
+console.log(deepMerge(obj3, obj4));
